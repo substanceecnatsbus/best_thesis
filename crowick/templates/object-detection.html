@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename = 'styles/style.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename = 'styles/object-detection-style.css') }}>
+    <script src= {{ url_for('static', filename = 'scripts/script.js') }} defer></script>
+    <title>Ｃ ｒ ｏ ｗ ｉ ｃ Ｋ</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-header">
+            <img class="nav-image" src={{ url_for('static', filename = 'images/rika.png') }} alt="" >
+
+            <div class="nav-bio">
+                <h1>crowick</h1>
+                <p class="bio">tagapagligtas ng QC</p>
+            </div>
+        </div>
+
+        <div class="nav-items-container">
+            <div id="hamburger">
+                <h2>Menu</h2>
+            </div>
+            <div class="items-hidden" id="nav-items">
+                <a href= {{ url_for('page.index') }}>Home</a>
+                <a href="#">Object Detection</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="image-container">
+                
+                <img src="data:image/PNG;base64,{{ image }}" id="image">
+            </div>
+            
+            <form class="controls-container" enctype="multipart/form-data" method="POST">
+                <input type="file" name="image">
+                <button type="submit">Upload u w u</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
